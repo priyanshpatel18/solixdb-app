@@ -11,7 +11,6 @@ import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { ApiExamplesSection } from "@/components/sections/ApiExamplesSection";
 import { SchemaSection } from "@/components/sections/SchemaSection";
 import { DatasetSection } from "@/components/sections/DatasetSection";
-import { AnchorLabsSection } from "@/components/sections/AnchorLabsSection";
 import { Footer } from "@/components/Footer";
 
 export default function HomePage() {
@@ -29,7 +28,6 @@ export default function HomePage() {
         <ApiExamplesSection />
         <SchemaSection />
         <DatasetSection />
-        <AnchorLabsSection />
       </main>
       <Footer />
     </div>
