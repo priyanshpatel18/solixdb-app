@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { syne } from "@/fonts/fonts";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,23 +15,26 @@ export function Navigation() {
     { href: "#features", label: "Features" },
     { href: "#use-cases", label: "Use Cases" },
     { href: "#api", label: "API" },
-    { href: "#schema", label: "Schema" },
-    { href: "#datasets", label: "Datasets" },
     { href: "http://docs.solixdb.xyz", label: "Docs", external: true },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80">
+    <nav className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2 group">
-            <span className={`text-xl font-bold ${syne} bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent group-hover:from-primary group-hover:to-secondary transition-all`}>
-              SolixDB
-            </span>
+        <div className="flex h-20 items-center justify-between">
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/logo.png"
+              alt="SolixDB"
+              width={120}
+              height={32}
+              className="h-8 w-auto transition-transform group-hover:scale-105"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -72,7 +75,7 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t"
+            className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl"
           >
             <div className="container mx-auto px-4 py-4 space-y-3">
               {navLinks.map((link) => (
@@ -87,7 +90,7 @@ export function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <Button asChild size="sm" className="w-full mt-4">
+              <Button asChild size="sm" className="w-full mt-4 rounded-full">
                 <Link href="https://api.solixdb.xyz" target="_blank" rel="noopener noreferrer">
                   Get Started
                 </Link>
@@ -99,4 +102,3 @@ export function Navigation() {
     </nav>
   );
 }
-

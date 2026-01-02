@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
 const { title, description, ogImage, baseURL } = {
-  title: "SolixDB - 390M+ Solana Transactions at Your Fingertips",
+  title: "SolixDB - Solana Transaction Data at Your Fingertips",
   description:
-    "Query Solana's largest transaction database via REST, GraphQL, or SQL. 390M+ indexed transactions with sub-500ms query times. Built for developers who need fast, reliable access to on-chain data.",
+    "Query Solana's largest transaction database via REST, GraphQL, or SQL. Real-time indexed transactions with sub-500ms query times. Built for developers who need fast, reliable access to on-chain data.",
   baseURL: "https://solixdb.xyz",
   ogImage: `https://solixdb.xyz/open-graph.png`,
 };
