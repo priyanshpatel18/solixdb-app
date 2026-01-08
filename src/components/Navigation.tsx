@@ -4,27 +4,23 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 export function Navigation() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const navLinks = [
-    { href: "#features", label: "Features" },
+    { href: "#benchmark", label: "BenchMark" },
     { href: "#use-cases", label: "Use Cases" },
-    { href: "#api", label: "API" },
     { href: "http://docs.solixdb.xyz", label: "Docs", external: true },
+    { href: "http://api.solixdb.xyz", label: "Api", external: true },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="sticky top-0 z-50 w-full">
+      <div className="container mx-auto px-8">
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center group">
             <Image
-              src="/logo.png"
+              src="/Hero.png"
               alt="SolixDB"
               width={120}
               height={32}
@@ -33,72 +29,24 @@ export function Navigation() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="flex items-center">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="text-sm font-bold hover:bg-neutral-100 py-0.5 px-2 rounded-sm text-neutral-500 hover:text-neutral-700 transition-colors hover:text-foreground"
               >
                 {link.label}
               </Link>
             ))}
-            <Button asChild size="sm" className="rounded-full">
-              <Link href="https://api.solixdb.xyz" target="_blank" rel="noopener noreferrer">
-                Get Started
-              </Link>
-            </Button>
+            {/* TODO: add blue background primary */}
+            <Link href={'/'} className="flex items-center gap-2 text-sm font-bold bg-neutral-100 py-2 px-4 ml-4 rounded-sm text-neutral-500 hover:text-neutral-700 transition-colors hover:text-foreground">Enterprise <ArrowRight size={18} /></Link>
             <ThemeToggle position="relative" />
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-2">
-            <ThemeToggle position="relative" />
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
           </div>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl"
-          >
-            <div className="container mx-auto px-4 py-4 space-y-3">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  target={link.external ? "_blank" : undefined}
-                  rel={link.external ? "noopener noreferrer" : undefined}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-sm font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Button asChild size="sm" className="w-full mt-4 rounded-full">
-                <Link href="https://api.solixdb.xyz" target="_blank" rel="noopener noreferrer">
-                  Get Started
-                </Link>
-              </Button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </nav>
   );
 }

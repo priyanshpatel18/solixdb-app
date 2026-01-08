@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Database, Zap, Globe, Shield, Clock, Code } from "lucide-react";
+import { Database, Zap, Globe, Shield, Clock, Code, ChevronRight, Terminal } from "lucide-react";
 
 const features = [
   {
@@ -38,49 +38,60 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
-        >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
-            Everything You Need
-          </h2>
-          <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            A complete DeFi data platform designed for Solana developers and researchers.
-          </p>
-        </motion.div>
+    <section id="features" className="">
+      <div className="px-30 mx-auto">
+        {/* <div className="mb-20 text-center">
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 text-[#1A1C1E]">Built for the <span className="text-blue-600">Future.</span></h2>
+          <p className="text-[#1A1C1E]/60 max-w-xl mx-auto font-medium text-lg">Infrastructure designed to scale with the Solana ecosystem's velocity.</p>
+        </div> */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="group"
-              >
-                <div className="h-full p-8 rounded-3xl bg-card/50 backdrop-blur-xl border border-border/50 hover:border-primary/30 transition-all hover:shadow-xl">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <Icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                  <p className="text-base leading-relaxed text-muted-foreground">
-                    {feature.description}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+        <div className="bento-grid">
+          {/* Main Large Feature */}
+          <div className="col-span-1 md:col-span-2 row-span-2 bg-white rounded-[2.5rem] p-12 flex flex-col justify-between group overflow-hidden border border-[#E5E1D8] hover:border-blue-500/30 transition-all shadow-xl shadow-[#1A1C1E]/5">
+            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+              <Zap className="w-48 h-48 text-blue-600" />
+            </div>
+            <div>
+              <div className="w-14 h-14 rounded-2xl bg-[#F9F7F2] flex items-center justify-center mb-8 border border-[#E5E1D8]">
+                <Zap className="w-7 h-7 text-blue-600" />
+              </div>
+              <h3 className="text-3xl font-black mb-5 tracking-tight text-[#1A1C1E]">Unmatched Query Speed</h3>
+              <p className="text-[#1A1C1E]/60 max-w-sm leading-relaxed text-lg font-medium">
+                Our optimized indexing engine provides sub-500ms responses, enabling truly interactive DeFi dashboards and trading tools.
+              </p>
+            </div>
+            <button className="mt-10 flex items-center gap-2 text-[#1A1C1E] font-bold group/btn hover:text-blue-600 transition-colors">
+              Explore Our Infrastructure
+              <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+            </button>
+          </div>
+
+          {/* Secondary Features */}
+          <div className="col-span-1 md:col-span-2 bg-white rounded-[2.5rem] p-10 flex flex-col justify-center border border-[#E5E1D8] shadow-lg shadow-[#1A1C1E]/5">
+            <div className="flex items-center gap-5 mb-5">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center border border-blue-100">
+                <Terminal className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold tracking-tight text-[#1A1C1E]">Multi-API Engine</h3>
+            </div>
+            <p className="text-[#1A1C1E]/60 text-base font-medium leading-relaxed">Choose your interface: REST for speed, GraphQL for complexity, or SQL for deep data analysis. All on one platform.</p>
+          </div>
+
+          <div className="bg-white rounded-[2.5rem] p-10 flex flex-col justify-center border border-[#E5E1D8] hover:shadow-xl transition-shadow shadow-sm">
+            <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center mb-5 border border-cyan-100">
+              <Database className="w-6 h-6 text-cyan-600" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 tracking-tight text-[#1A1C1E]">Zero-Loss History</h3>
+            <p className="text-[#1A1C1E]/60 text-sm font-medium">We preserve every byte of transaction data across 10+ major Solana protocols since inception.</p>
+          </div>
+
+          <div className="bg-white rounded-[2.5rem] p-10 flex flex-col justify-center border border-[#E5E1D8] hover:shadow-xl transition-shadow shadow-sm">
+            <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 border border-blue-100">
+              <Shield className="w-6 h-6 text-blue-600" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 tracking-tight text-[#1A1C1E]">Bank-Grade SLA</h3>
+            <p className="text-[#1A1C1E]/60 text-sm font-medium">99.9% uptime guaranteed for production applications with dedicated support channels.</p>
+          </div>
         </div>
       </div>
     </section>

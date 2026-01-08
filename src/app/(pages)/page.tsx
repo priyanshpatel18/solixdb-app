@@ -11,12 +11,18 @@ import { Footer } from "@/components/Footer";
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen w-full flex-col">
       <Navigation />
-      <main className="flex-1">
+      <main className="w-full">
         <HeroSection />
-        <StatsSection />
-        <FeaturesSection />
+        <div className="flex flex-col gap-8 mt-36">
+          <span className="text-4xl text-neutral-400 font-semibold px-30"># Statistics</span>
+          <StatsSection />
+        </div>
+        <div className="flex flex-col gap-8 mt-36">
+          <span className="text-4xl text-neutral-400 font-semibold px-30"># Features</span>
+          <FeaturesSection />
+        </div>
         <ApiExamplesSection />
         <UseCasesSection />
         <CTASection />
