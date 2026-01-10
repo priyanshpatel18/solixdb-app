@@ -27,10 +27,7 @@ export default function HomePage() {
           <FeaturesSection />
         </div>
         {/* api examples */}
-        <div className="flex flex-col gap-4 sm:gap-8 mt-16 sm:mt-24 md:mt-36">
-          <span className="text-2xl sm:text-3xl md:text-4xl text-neutral-400 font-semibold px-4 sm:px-8 md:px-16 lg:px-30"># API's</span>
-          <ApiExamplesSection />
-        </div>
+        <ApiExamplesSection />
         {/* <div className="flex flex-col gap-8 mt-36">
           <span className="text-4xl text-neutral-400 font-semibold px-30"># Protocols</span>
           <Protocols />
