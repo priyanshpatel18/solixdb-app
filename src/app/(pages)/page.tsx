@@ -17,31 +17,31 @@ export default function HomePage() {
       <main className="w-full">
         <HeroSection />
         {/* stats */}
-        <div className="flex flex-col gap-8 mt-36">
-          <span className="text-4xl text-neutral-400 font-semibold px-30"># Statistics</span>
+        <div className="flex flex-col gap-4 sm:gap-8 mt-16 sm:mt-24 md:mt-36">
+          <span className="text-2xl sm:text-3xl md:text-4xl text-neutral-400 font-semibold px-4 sm:px-8 md:px-16 lg:px-30"># Statistics</span>
           <StatsSection />
         </div>
         {/* features */}
-        <div className="flex flex-col gap-8 mt-36">
-          <span className="text-4xl text-neutral-400 font-semibold px-30"># Features</span>
+        <div className="flex flex-col gap-4 sm:gap-8 mt-16 sm:mt-24 md:mt-36">
+          <span className="text-2xl sm:text-3xl md:text-4xl text-neutral-400 font-semibold px-4 sm:px-8 md:px-16 lg:px-30"># Features</span>
           <FeaturesSection />
         </div>
         {/* api examples */}
-        <div className="flex flex-col gap-8 mt-36">
-          <span className="text-4xl text-neutral-400 font-semibold px-30"># API's</span>
+        <div className="flex flex-col gap-4 sm:gap-8 mt-16 sm:mt-24 md:mt-36">
+          <span className="text-2xl sm:text-3xl md:text-4xl text-neutral-400 font-semibold px-4 sm:px-8 md:px-16 lg:px-30"># API's</span>
           <ApiExamplesSection />
         </div>
-        <div className="flex flex-col gap-8 mt-36">
+        {/* <div className="flex flex-col gap-8 mt-36">
           <span className="text-4xl text-neutral-400 font-semibold px-30"># Protocols</span>
           <Protocols />
-        </div>
+        </div> */}
 
 
         {/* Notion doc */}
         {/* <UseCasesSection /> */}
         {/* <CTASection /> */}
       </main>
-      <div className="mt-20">
+      <div className="mt-12 sm:mt-16 md:mt-20">
         <Footer />
       </div>
     </div>

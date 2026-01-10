@@ -39,43 +39,38 @@ const features = [
 export function FeaturesSection() {
   return (
     <section id="features" className="">
-      <div className="px-30 mx-auto">
-        {/* <div className="mb-20 text-center">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 text-[#1A1C1E]">Built for the <span className="text-blue-600">Future.</span></h2>
-          <p className="text-[#1A1C1E]/60 max-w-xl mx-auto font-medium text-lg">Infrastructure designed to scale with the Solana ecosystem's velocity.</p>
-        </div> */}
-
+      <div className="px-4 sm:px-8 md:px-16 lg:px-30 mx-auto">
         <div className="bento-grid">
           {/* Main Large Feature */}
-          <div className="col-span-1 md:col-span-2 row-span-2 bg-white rounded-sm p-12 flex flex-col justify-between group overflow-hidden border border-[#E5E1D8] hover:border-blue-500/30 transition-all shadow-xl shadow-[#1A1C1E]/5">
+          <div className="col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 bg-white rounded-sm p-6 sm:p-8 md:p-12 flex flex-col justify-between group overflow-hidden border border-[#E5E1D8] hover:border-blue-500/30 transition-all shadow-xl shadow-[#1A1C1E]/5">
             <div>
-              <h3 className="text-3xl font-black mb-5 tracking-tight text-[#1A1C1E]">Unmatched Query Speed</h3>
-              <p className="text-[#1A1C1E]/60 max-w-sm leading-relaxed text-lg font-medium">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-3 sm:mb-5 tracking-tight text-[#1A1C1E]">Unmatched Query Speed</h3>
+              <p className="text-[#1A1C1E]/60 max-w-sm leading-relaxed text-sm sm:text-base md:text-lg font-medium">
                 Our optimized indexing engine provides sub-500ms responses, enabling truly interactive DeFi dashboards and trading tools.
               </p>
             </div>
-            <button className="mt-10 flex items-center gap-2 text-[#1A1C1E] font-bold group/btn hover:text-blue-600 transition-colors">
+            <button className="mt-6 sm:mt-10 flex items-center gap-2 text-[#1A1C1E] font-bold group/btn hover:text-blue-600 transition-colors text-sm sm:text-base">
               Explore Our Infrastructure
               <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
             </button>
           </div>
 
           {/* Secondary Features */}
-          <div className="col-span-1 md:col-span-2 bg-white rounded-sm p-10 flex flex-col justify-center border border-[#E5E1D8] shadow-lg shadow-[#1A1C1E]/5">
-            <div className="flex items-center gap-5 mb-5">
-              <h3 className="text-2xl font-bold tracking-tight text-[#1A1C1E]">Multi-API Engine</h3>
+          <div className="col-span-1 sm:col-span-2 bg-white rounded-sm p-6 sm:p-8 md:p-10 flex flex-col justify-center border border-[#E5E1D8] shadow-lg shadow-[#1A1C1E]/5">
+            <div className="flex items-center gap-3 sm:gap-5 mb-3 sm:mb-5">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-[#1A1C1E]">Multi-API Engine</h3>
             </div>
-            <p className="text-[#1A1C1E]/60 text-base font-medium leading-relaxed">Choose your interface: REST for speed, GraphQL for complexity, or SQL for deep data analysis. All on one platform.</p>
+            <p className="text-[#1A1C1E]/60 text-sm sm:text-base font-medium leading-relaxed">Choose your interface: REST for speed, GraphQL for complexity, or SQL for deep data analysis. All on one platform.</p>
           </div>
 
-          <div className="bg-white rounded-sm p-10 flex flex-col justify-center border border-[#E5E1D8] hover:shadow-xl transition-shadow shadow-sm">
-            <h3 className="text-xl font-bold mb-3 tracking-tight text-[#1A1C1E]">Zero-Loss History</h3>
-            <p className="text-[#1A1C1E]/60 text-sm font-medium">We preserve every byte of transaction data across 10+ major Solana protocols since inception.</p>
+          <div className="bg-white rounded-sm p-6 sm:p-8 md:p-10 flex flex-col justify-center border border-[#E5E1D8] hover:shadow-xl transition-shadow shadow-sm">
+            <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 tracking-tight text-[#1A1C1E]">Zero-Loss History</h3>
+            <p className="text-[#1A1C1E]/60 text-xs sm:text-sm font-medium">We preserve every byte of transaction data across 10+ major Solana protocols since inception.</p>
           </div>
 
-          <div className="bg-white rounded-sm p-10 flex flex-col justify-center border border-[#E5E1D8] hover:shadow-xl transition-shadow shadow-sm">
-            <h3 className="text-xl font-bold mb-3 tracking-tight text-[#1A1C1E]">Bank-Grade SLA</h3>
-            <p className="text-[#1A1C1E]/60 text-sm font-medium">99.9% uptime guaranteed for production applications with dedicated support channels.</p>
+          <div className="bg-white rounded-sm p-6 sm:p-8 md:p-10 flex flex-col justify-center border border-[#E5E1D8] hover:shadow-xl transition-shadow shadow-sm">
+            <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 tracking-tight text-[#1A1C1E]">Bank-Grade SLA</h3>
+            <p className="text-[#1A1C1E]/60 text-xs sm:text-sm font-medium">99.9% uptime guaranteed for production applications with dedicated support channels.</p>
           </div>
         </div>
       </div>

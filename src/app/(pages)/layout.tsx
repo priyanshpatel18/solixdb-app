@@ -5,5 +5,9 @@ interface PagesLayoutProps {
 }
 
 export default function PagesLayout({ children }: PagesLayoutProps) {
-  return <>{children}</>;
+  return (
+    <div className="light bg-white" style={{ colorScheme: 'light' }}>
+      {children}
+    </div>
+  );
 }
