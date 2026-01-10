@@ -9,6 +9,7 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+
 export const metadata = siteConfig;
 
 export default function RootLayout({
