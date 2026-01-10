@@ -1,17 +1,40 @@
 "use client";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { motion } from "framer-motion";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, Zap, GitBranch, Database, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { Highlight, themes } from "prism-react-renderer";
 
-const examples = {
-  rest: `// GET /api/v1/transactions?protocol=jupiter&limit=10
-fetch('https://api.solixdb.xyz/api/v1/transactions?protocol=jupiter&limit=10')
-  .then(res => res.json())
-  .then(data => console.log(data));`,
+const apiTypes = [
+  {
+    key: "rest",
+    title: "REST API",
+    subtitle: "Built for Speed",
+    description: "Simple HTTP endpoints with JSON responses. Perfect for quick integrations and high-performance applications.",
+    gradient: "from-blue-500 to-blue-600",
+    bgGlow: "bg-blue-500/10",
+    borderHover: "hover:border-blue-500/50",
+    icon: Zap,
+    language: "javascript" as const,
+    code: `// Fetch Jupiter transactions
+const response = await fetch(
+  'https://api.solixdb.xyz/v1/transactions?' +
+  'protocol=jupiter&limit=10'
+);
 
-  graphql: `query GetTransactions {
+const data = await response.json();
+console.log(data.transactions);`,
+  },
+  {
+    key: "graphql",
+    title: "GraphQL",
+    subtitle: "GraphQL for complexity",
+    description: "Flexible queries to fetch exactly the data you need. Reduce over-fetching and build efficient applications.",
+    gradient: "from-purple-500 to-pink-500",
+    bgGlow: "bg-purple-500/10",
+    borderHover: "hover:border-purple-500/50",
+    icon: GitBranch,
+    language: "graphql" as const,
+    code: `query GetTransactions {
   transactions(
     filter: { protocol: "jupiter" }
     limit: 10
@@ -22,16 +45,29 @@ fetch('https://api.solixdb.xyz/api/v1/transactions?protocol=jupiter&limit=10')
     amount
   }
 }`,
-
-  sql: `SELECT 
+  },
+  {
+    key: "sql",
+    title: "SQL Interface",
+    subtitle: "SQL for deep data analysis",
+    description: "Full SQL access for complex analytics and custom aggregations. Unleash the power of structured queries.",
+    gradient: "from-emerald-500 to-teal-500",
+    bgGlow: "bg-emerald-500/10",
+    borderHover: "hover:border-emerald-500/50",
+    icon: Database,
+    language: "sql" as const,
+    code: `SELECT 
   signature,
   timestamp,
   protocol,
   amount
 FROM transactions
 WHERE protocol = 'jupiter'
+  AND timestamp > NOW() - INTERVAL '1 hour'
+ORDER BY timestamp DESC
 LIMIT 10;`,
-};
+  },
+];
 
 export function ApiExamplesSection() {
   const [copied, setCopied] = useState<string | null>(null);
@@ -43,67 +79,95 @@ export function ApiExamplesSection() {
   };
 
   return (
-    <section id="api" className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+    <section id="api" className="relative  overflow-hidden">
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
-        >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
-            Choose Your API
-          </h2>
-          <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Three ways to access the same powerful data. Pick what works for you.
+        <div className="text-center mb-8">
+          <p className="text-lg text-left sm:text-xl text-[#1A1C1E]/60 font-medium">
+            Choose the interface that fits your workflow. All backed by the same blazing-fast infrastructure.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="max-w-5xl mx-auto">
-          <Tabs defaultValue="rest" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 mb-8 h-14 bg-muted/50">
-              <TabsTrigger value="rest" className="text-base font-semibold">REST</TabsTrigger>
-              <TabsTrigger value="graphql" className="text-base font-semibold">GraphQL</TabsTrigger>
-              <TabsTrigger value="sql" className="text-base font-semibold">SQL</TabsTrigger>
-            </TabsList>
+        {/* code up */}
+        {/* text below with button like status.network card and layout animation for testing on landing page directly */}
 
-            {Object.entries(examples).map(([key, code]) => (
-              <TabsContent key={key} value={key}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <div className="relative p-8 rounded-3xl bg-card/50 backdrop-blur-xl border border-border/50">
-                    <div className="flex items-center justify-between mb-6">
-                      <h3 className="text-xl font-bold capitalize">{key} Example</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {apiTypes.map((api, index) => (
+            <div
+              key={api.key}
+              className={`group relative bg-white rounded-sm border border-[#E5E1D8] transition-all duration-300 overflow-hidden`}
+            >
+
+              <div className="p-8 flex flex-col h-full justify-between">
+                <div className="">
+                  <div className="flex items-start justify-between mb-6">
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <div>
+                          <h3 className="text-xl font-bold text-[#1A1C1E]">{api.title}</h3>
+                          <p className="text-sm font-medium text-[#1A1C1E]/50">{api.subtitle}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-[#1A1C1E]/60 text-sm font-medium leading-relaxed mb-6">
+                    {api.description}
+                  </p>
+
+                  <div className="relative">
+                    <div className="absolute top-3 right-3 z-10">
                       <button
-                        onClick={() => copyToClipboard(code, key)}
-                        className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-muted-foreground hover:text-foreground transition-all hover:bg-muted"
+                        onClick={() => copyToClipboard(api.code, api.key)}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${copied === api.key
+                          ? 'bg-green-100 text-green-700'
+                          : 'bg-white/80 backdrop-blur-sm text-[#1A1C1E]/70 hover:bg-white hover:text-[#1A1C1E] shadow-sm'
+                          }`}
                       >
-                        {copied === key ? (
+                        {copied === api.key ? (
                           <>
-                            <Check className="h-4 w-4" />
-                            Copied!
+                            <Check className="h-3.5 w-3.5" />
+                            {/* Copied! */}
                           </>
                         ) : (
                           <>
-                            <Copy className="h-4 w-4" />
-                            Copy
+                            <Copy className="h-3.5 w-3.5" />
+                            {/* Copy */}
                           </>
                         )}
                       </button>
                     </div>
-                    <pre className="bg-muted/30 p-6 rounded-2xl overflow-x-auto border border-border/30">
-                      <code className="text-sm font-mono leading-relaxed text-foreground">{code}</code>
-                    </pre>
+
+                    <Highlight
+                      theme={themes.vsLight}
+                      code={api.code}
+                      language={api.language}
+                    >
+                      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                        <pre
+                          className={`${api.bgGlow} rounded-md p-5 overflow-x-auto border w-full border-[#E5E1D8]/50 text-[13px] font-mono leading-relaxed`}
+                          style={{ ...style, background: 'transparent' }}
+                        >
+                          {tokens.map((line, i) => (
+                            <div key={i} {...getLineProps({ line })}>
+                              {line.map((token, key) => (
+                                <span key={key} {...getTokenProps({ token })} />
+                              ))}
+                            </div>
+                          ))}
+                        </pre>
+                      )}
+                    </Highlight>
                   </div>
-                </motion.div>
-              </TabsContent>
-            ))}
-          </Tabs>
+                </div>
+
+                <button className="mt-6 flex items-center gap-2 text-sm font-bold text-[#1A1C1E]/70 hover:text-blue-600 transition-colors group/btn">
+                  View Documentation
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

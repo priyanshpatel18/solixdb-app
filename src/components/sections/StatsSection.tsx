@@ -1,6 +1,6 @@
 const stats = [
   { value: "<500ms", label: "Average Query Time" },
-  { value: "5+", label: "Protocols Supported" },
+  { value: "8+", label: "Protocols Supported" },
   { value: "24/7", label: "Real-Time Updates" },
   { value: "3 APIs", label: "REST, GraphQL, SQL" },
 ];

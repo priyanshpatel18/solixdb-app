@@ -47,14 +47,8 @@ export function FeaturesSection() {
 
         <div className="bento-grid">
           {/* Main Large Feature */}
-          <div className="col-span-1 md:col-span-2 row-span-2 bg-white rounded-[2.5rem] p-12 flex flex-col justify-between group overflow-hidden border border-[#E5E1D8] hover:border-blue-500/30 transition-all shadow-xl shadow-[#1A1C1E]/5">
-            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-              <Zap className="w-48 h-48 text-blue-600" />
-            </div>
+          <div className="col-span-1 md:col-span-2 row-span-2 bg-white rounded-sm p-12 flex flex-col justify-between group overflow-hidden border border-[#E5E1D8] hover:border-blue-500/30 transition-all shadow-xl shadow-[#1A1C1E]/5">
             <div>
-              <div className="w-14 h-14 rounded-2xl bg-[#F9F7F2] flex items-center justify-center mb-8 border border-[#E5E1D8]">
-                <Zap className="w-7 h-7 text-blue-600" />
-              </div>
               <h3 className="text-3xl font-black mb-5 tracking-tight text-[#1A1C1E]">Unmatched Query Speed</h3>
               <p className="text-[#1A1C1E]/60 max-w-sm leading-relaxed text-lg font-medium">
                 Our optimized indexing engine provides sub-500ms responses, enabling truly interactive DeFi dashboards and trading tools.
@@ -67,28 +61,19 @@ export function FeaturesSection() {
           </div>
 
           {/* Secondary Features */}
-          <div className="col-span-1 md:col-span-2 bg-white rounded-[2.5rem] p-10 flex flex-col justify-center border border-[#E5E1D8] shadow-lg shadow-[#1A1C1E]/5">
+          <div className="col-span-1 md:col-span-2 bg-white rounded-sm p-10 flex flex-col justify-center border border-[#E5E1D8] shadow-lg shadow-[#1A1C1E]/5">
             <div className="flex items-center gap-5 mb-5">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center border border-blue-100">
-                <Terminal className="w-6 h-6 text-blue-600" />
-              </div>
               <h3 className="text-2xl font-bold tracking-tight text-[#1A1C1E]">Multi-API Engine</h3>
             </div>
             <p className="text-[#1A1C1E]/60 text-base font-medium leading-relaxed">Choose your interface: REST for speed, GraphQL for complexity, or SQL for deep data analysis. All on one platform.</p>
           </div>
 
-          <div className="bg-white rounded-[2.5rem] p-10 flex flex-col justify-center border border-[#E5E1D8] hover:shadow-xl transition-shadow shadow-sm">
-            <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center mb-5 border border-cyan-100">
-              <Database className="w-6 h-6 text-cyan-600" />
-            </div>
+          <div className="bg-white rounded-sm p-10 flex flex-col justify-center border border-[#E5E1D8] hover:shadow-xl transition-shadow shadow-sm">
             <h3 className="text-xl font-bold mb-3 tracking-tight text-[#1A1C1E]">Zero-Loss History</h3>
             <p className="text-[#1A1C1E]/60 text-sm font-medium">We preserve every byte of transaction data across 10+ major Solana protocols since inception.</p>
           </div>
 
-          <div className="bg-white rounded-[2.5rem] p-10 flex flex-col justify-center border border-[#E5E1D8] hover:shadow-xl transition-shadow shadow-sm">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 border border-blue-100">
-              <Shield className="w-6 h-6 text-blue-600" />
-            </div>
+          <div className="bg-white rounded-sm p-10 flex flex-col justify-center border border-[#E5E1D8] hover:shadow-xl transition-shadow shadow-sm">
             <h3 className="text-xl font-bold mb-3 tracking-tight text-[#1A1C1E]">Bank-Grade SLA</h3>
             <p className="text-[#1A1C1E]/60 text-sm font-medium">99.9% uptime guaranteed for production applications with dedicated support channels.</p>
           </div>
