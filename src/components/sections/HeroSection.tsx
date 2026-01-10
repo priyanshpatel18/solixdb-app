@@ -14,7 +14,7 @@ export function HeroSection() {
         Index <span className="font-semibold">Less.</span> Build <span className="font-semibold">More.</span>
       </h1>
       <p className="text-base sm:text-lg md:text-xl max-w-xl text-center text-neutral-700 font-medium px-4">
-        SolixDB provides pre-indexed historical Solana DeFi data with REST, GraphQL, and SQL access — built for production-scale applications.
+        SolixDB provides pre-indexed Solana DeFi data with JSON RPC, GraphQL, and SQL access built for production-scale applications.
       </p>
 
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 w-full sm:w-auto px-4 sm:px-0">
@@ -48,14 +48,12 @@ export function HeroSection() {
       </div>
 
       {/* Open Source - Hidden on mobile, shown on md+ */}
-      <div className="hidden md:flex absolute bottom-0 right-8 lg:right-32 flex-col gap-2">
+      <div className="hidden md:flex absolute bottom-0 right-8 lg:right-32 shrink-0 flex-col gap-2">
         <span className="text-neutral-700 text-sm lg:text-base font-semibold">Open Source</span>
-        <div className="flex gap-1 w-full justify-end">
-          <span className="py-0.5 px-1 rounded-md bg-black">
-            <Link href={"/"}>
-              <Github size={28} className="p-1 text-white lg:w-8 lg:h-8" />
-            </Link>
-          </span>
+        <div className="flex gap-1 w-full justify-end shrink-0">
+          <Link href={"https://github.com/solixdb"} className="py-0.5 px-1 shrink-0 rounded-md bg-black" target="_blank" rel="noopener noreferrer">
+            <Github size={28} className="p-1 text-white lg:w-8 lg:h-8" />
+          </Link>
         </div>
       </div>
 
@@ -68,12 +66,10 @@ export function HeroSection() {
             <Image src="/Triton.png" alt="Triton" width={24} height={24} className="rounded-md" />
           </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center  shrink-0 gap-4">
           <span className="text-neutral-500 text-xs font-medium">Open Source</span>
-          <Link href={"https://github.com/solixdb"} target="_blank" rel="noopener noreferrer">
-            <span className="py-0.5 px-1 rounded-md bg-black">
-              <Github size={20} className="p-0.5 text-white" />
-            </span>
+          <Link href={"https://github.com/solixdb"} className="py-1 px-1 rounded-md bg-black shrink-0" target="_blank" rel="noopener noreferrer">
+            <Github size={20} className="p-0.5 text-white" />
           </Link>
         </div>
       </div>
