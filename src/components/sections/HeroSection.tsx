@@ -8,7 +8,7 @@ export function HeroSection() {
   return (
     <section className="w-full min-h-[50vh] sm:min-h-[55vh] md:h-[65vh] flex relative flex-col gap-4 items-center px-4 sm:px-6 mt-16 sm:mt-24 md:mt-42">
       <div className="mb-4">
-        <Image src={"/logo.png"} alt="SolixDB" width={90} height={90} className="w-full h-full sm:w-20 sm:h-20 md:w-[100px] md:h-[30px]" />
+        <Image src={"/logo.png"} alt="SolixDB" width={90} height={90} className="w-full h-full" />
       </div>
       <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] text-gradient text-center">
         Index <span className="font-semibold">Less.</span> Build <span className="font-semibold">More.</span>
@@ -35,13 +35,13 @@ export function HeroSection() {
         <span className="text-neutral-700 text-sm lg:text-base font-semibold">Powered by</span>
         <div className="flex gap-1">
           <span>
-            <Link href={"/"}>
+            <Link href={"https://x.com/anza_xyz"} target="_blank" rel="noopener noreferrer">
               <Image src="/anza.jpg" alt="anza" width={35} height={35} className="rounded-md w-8 h-8 lg:w-[35px] lg:h-[35px]" />
             </Link>
           </span>
           <span>
-            <Link href={"/"}>
-              <Image src="/helius.jpg" alt="helius" width={35} height={35} className="rounded-md w-8 h-8 lg:w-[35px] lg:h-[35px]" />
+            <Link href={"https://x.com/triton_one"} target="_blank" rel="noopener noreferrer">
+              <Image src="/Triton.png" alt="Triton" width={35} height={35} className="rounded-md w-8 h-8 lg:w-[35px] lg:h-[35px]" />
             </Link>
           </span>
         </div>
@@ -65,14 +65,16 @@ export function HeroSection() {
           <span className="text-neutral-500 text-xs font-medium">Powered by</span>
           <div className="flex gap-1">
             <Image src="/anza.jpg" alt="anza" width={24} height={24} className="rounded-md" />
-            <Image src="/helius.jpg" alt="helius" width={24} height={24} className="rounded-md" />
+            <Image src="/Triton.png" alt="Triton" width={24} height={24} className="rounded-md" />
           </div>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-neutral-500 text-xs font-medium">Open Source</span>
-          <span className="py-0.5 px-1 rounded-md bg-black">
-            <Github size={20} className="p-0.5 text-white" />
-          </span>
+          <Link href={"https://github.com/solixdb"} target="_blank" rel="noopener noreferrer">
+            <span className="py-0.5 px-1 rounded-md bg-black">
+              <Github size={20} className="p-0.5 text-white" />
+            </span>
+          </Link>
         </div>
       </div>
     </section>

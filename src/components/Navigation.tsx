@@ -23,7 +23,7 @@ export function Navigation() {
         <div className="flex h-16 sm:h-20 items-center justify-between">
           <Link href="/" className="flex items-center group">
             <Image
-              src="/Hero.png"
+              src="https://ox35safakaidjuzg.public.blob.vercel-storage.com/hero.webp"
               alt="SolixDB"
               width={120}
               height={32}
@@ -75,7 +75,9 @@ export function Navigation() {
                 </Link>
               ))}
               <Link
-                href={'/'}
+                href={'https://t.me/priyansh_ptl18'}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 text-sm font-bold bg-neutral-100 py-2.5 px-4 mt-2 rounded-sm text-neutral-500 hover:text-neutral-700 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Database, Zap, Globe, Shield, Clock, Code, ChevronRight, Terminal } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   {
@@ -49,10 +50,12 @@ export function FeaturesSection() {
                 Our optimized indexing engine provides sub-500ms responses, enabling truly interactive DeFi dashboards and trading tools.
               </p>
             </div>
-            <button className="mt-6 sm:mt-10 flex items-center gap-2 text-[#1A1C1E] font-bold group/btn hover:text-blue-600 transition-colors text-sm sm:text-base">
-              Explore Our Infrastructure
-              <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-            </button>
+            <Link href={"http://docs.solixdb.xyz/"} rel="noopener noreferrer" target="_blank">
+              <button className="mt-6 sm:mt-10 flex items-center gap-2 text-[#1A1C1E] font-bold group/btn hover:text-blue-600 transition-colors text-sm sm:text-base">
+                Explore Our Infrastructure
+                <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+              </button>
+            </Link>
           </div>
 
           {/* Secondary Features */}

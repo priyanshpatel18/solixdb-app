@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const links = {
   product: [
-    { label: "Features", href: "#features" },
+    { label: "Features", href: "#benchmark" },
     { label: "Use Cases", href: "#use-cases" },
-    { label: "API", href: "#api" },
+    { label: "API", href: "https://dashboard.solixdb.xyz" },
   ],
   resources: [
     { label: "Documentation", href: "http://docs.solixdb.xyz", external: true },
