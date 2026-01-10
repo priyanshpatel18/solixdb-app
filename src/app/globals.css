@@ -36,4 +36,130 @@
     grid-template-rows: repeat(2, minmax(200px, auto));
     gap: 1.5rem;
   }
+
+  /* Gaming/Esports themed animations */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(79, 70, 229, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(79, 70, 229, 0.8), 0 0 60px rgba(34, 211, 238, 0.4);
+    }
+  }
+
+  @keyframes neon-flicker {
+    0%, 100% {
+      opacity: 1;
+    }
+    41.99% {
+      opacity: 1;
+    }
+    42% {
+      opacity: 0;
+    }
+    42.1% {
+      opacity: 1;
+    }
+    43% {
+      opacity: 1;
+    }
+    43.1% {
+      opacity: 0;
+    }
+    45% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-neon-flicker {
+    animation: neon-flicker 3s linear infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+  }
+
+  /* Gaming-themed text effects */
+  .text-neon-cyan {
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.8),
+                 0 0 20px rgba(34, 211, 238, 0.6),
+                 0 0 30px rgba(34, 211, 238, 0.4);
+  }
+
+  .text-neon-purple {
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.8),
+                 0 0 20px rgba(168, 85, 247, 0.6),
+                 0 0 30px rgba(168, 85, 247, 0.4);
+  }
+
+  .text-neon-pink {
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.8),
+                 0 0 20px rgba(236, 72, 153, 0.6),
+                 0 0 30px rgba(236, 72, 153, 0.4);
+  }
+
+  /* Gaming border effects */
+  .border-glow-cyan {
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.5),
+                0 0 20px rgba(34, 211, 238, 0.3),
+                inset 0 0 10px rgba(34, 211, 238, 0.1);
+  }
+
+  .border-glow-purple {
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5),
+                0 0 20px rgba(168, 85, 247, 0.3),
+                inset 0 0 10px rgba(168, 85, 247, 0.1);
+  }
+
+  /* Particle effect background */
+  .bg-particles {
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+  }
+
+  /* Gaming card hover effect */
+  .card-gaming {
+    transition: all 0.3s ease;
+  }
+
+  .card-gaming:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(34, 211, 238, 0.2),
+                0 0 20px rgba(168, 85, 247, 0.1);
+  }
 }
