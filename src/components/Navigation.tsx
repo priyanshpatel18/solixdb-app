@@ -11,7 +11,7 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "#benchmark", label: "BenchMark" },
+    { href: "#benchmark", label: "Benchmark" },
     { href: "#use-cases", label: "Use Cases" },
     { href: "http://docs.solixdb.xyz", label: "Docs", external: true },
     { href: "http://api.solixdb.xyz", label: "Api", external: true },
@@ -45,7 +45,7 @@ export function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Link href={'/'} className="flex items-center gap-2 text-sm font-bold bg-neutral-100 py-2 px-4 ml-4 rounded-sm text-neutral-500 hover:text-neutral-700 transition-colors hover:text-foreground">Enterprise <ArrowRight size={18} /></Link>
+            <Link href={'https://t.me/priyansh_ptl18'} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-bold bg-neutral-100 py-2 px-4 ml-4 rounded-sm text-neutral-500 hover:text-neutral-700 transition-colors hover:text-foreground">Enterprise <ArrowRight size={18} /></Link>
           </div>
 
           {/* Mobile Menu Button */}
