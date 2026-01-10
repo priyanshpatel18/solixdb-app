@@ -3,6 +3,7 @@
 import { Copy, Check, Zap, GitBranch, Database, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { Highlight, themes } from "prism-react-renderer";
+import Link from "next/link";
 
 const apiTypes = [
   {
@@ -142,10 +143,12 @@ export function ApiExamplesSection() {
                   </p>
 
 
-                  <button className="flex items-center gap-2 text-sm font-bold text-[#1A1C1E]/70 hover:text-blue-600 transition-colors group/btn">
-                    View Documentation
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
+                  <Link href={"http://docs.solixdb.xyz/"} rel="noopener noreferrer" target="_blank">
+                    <button className="flex items-center gap-2 text-sm font-bold text-[#1A1C1E]/70 hover:text-blue-600 transition-colors group/btn">
+                      View Documentation
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -280,10 +283,12 @@ export function ApiExamplesSection() {
                 <p className="text-[#1A1C1E]/60 text-sm font-medium leading-relaxed">
                   Full JSON-RPC 2.0 support with powerful filtering, aggregations, and real-time protocol analytics.
                 </p>
-                <button className="flex items-center gap-2 text-sm font-bold text-[#1A1C1E]/70 hover:text-blue-600 transition-colors group/btn">
-                  View RPC Documentation
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </button>
+                <Link href={"http://docs.solixdb.xyz/"} rel="noopener noreferrer" target="_blank">
+                  <button className="flex items-center gap-2 text-sm font-bold text-[#1A1C1E]/70 hover:text-blue-600 transition-colors group/btn">
+                    View RPC Documentation
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

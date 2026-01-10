@@ -2,13 +2,13 @@ const stats = [
   { value: "<500ms", label: "Average Query Time" },
   { value: "8+", label: "Protocols Supported" },
   { value: "24/7", label: "Real-Time Updates" },
-  { value: "3 APIs", label: "REST, GraphQL, SQL" },
+  { value: "3 APIs", label: "Json RPC, GraphQL, SQL" },
 ];
 
 function StatItem({ value, label }: { value: string; label: string }) {
   return (
     <div className="text-center py-4 sm:py-0">
-      <div className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-gradient2 font-bold mb-2 sm:mb-3">
+      <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gradient2 font-bold mb-2 sm:mb-3">
         {value}
       </div>
       <div className="text-muted-foreground text-sm sm:text-base lg:text-lg text-white font-medium">{label}</div>
