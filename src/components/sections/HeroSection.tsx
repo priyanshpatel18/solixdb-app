@@ -1,12 +1,57 @@
 "use client";
 
-import { ArrowRight, Github } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, Github, Copy } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export function HeroSection() {
+  const [copied, setCopied] = useState(false);
+  const ca = "yxqrfoGCrwt3Tv71ZVEMUUTECDUJcEAbbmGYnHRcyai";
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(ca);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch (e) {
+      // ignore
+    }
+  };
+
   return (
     <section className="w-full min-h-[50vh] sm:min-h-[55vh] md:h-[65vh] flex relative flex-col gap-4 items-center px-4 sm:px-6 mt-16 sm:mt-24 md:mt-42">
+      <button
+        type="button"
+        onClick={handleCopy}
+        className="group relative inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/70 px-3 py-1 text-xs sm:text-sm font-medium text-neutral-800 shadow-sm backdrop-blur hover:border-neutral-300 hover:bg-white transition-colors"
+      >
+        <span className="font-semibold text-base uppercase tracking-[0.16em] text-neutral-500">
+          CA
+        </span>
+        <span className="font-mono text-base text-neutral-700 max-w-[240px] sm:max-w-xs truncate">
+          {ca}
+        </span>
+        <Copy
+          size={14}
+          className="text-neutral-500 group-hover:text-neutral-800 transition-transform duration-150 group-active:scale-90"
+        />
+
+        {/* Hover hint */}
+        <span className="pointer-events-none absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-black text-[10px] px-2 py-1 text-white/90 opacity-0 shadow-sm transition-opacity duration-150 group-hover:opacity-100">
+          Tap to copy
+        </span>
+
+        {/* Copied micro animation */}
+        {copied && (
+          <span className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-emerald-400/60 animate-ping-slow" />
+        )}
+        {copied && (
+          <span className="pointer-events-none absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-emerald-500 text-[10px] px-2 py-1 text-white shadow-sm">
+            Copied
+          </span>
+        )}
+      </button>
       <div className="mb-4">
         <Image src={"/logo.png"} alt="SolixDB" width={90} height={90} className="w-full h-full" />
       </div>
